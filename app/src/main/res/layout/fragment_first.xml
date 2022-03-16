@@ -16,10 +16,19 @@
         android:text="@string/hello_blank_fragment" />
 
     <Button
+        android:id="@+id/first_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/first_button"
         android:text="@string/go_to_second"
-        app:layout_constraintTop_toBottomOf="@id/first_text"/>
+        app:layout_constraintTop_toBottomOf="@id/first_text" />
+
+    <Button
+        android:id="@+id/first_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="3"
+        app:layout_constraintTop_toBottomOf="@id/first_button"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SecondFragment.newInstance] factory method to
+ * Use the [Fragment5.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SecondFragment : Fragment() {
+class Fragment5 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,26 +34,12 @@ class SecondFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_second, container, false)
-        val button = view.findViewById<Button>(R.id.second_button)
-        button.setOnClickListener {
+        val view=inflater.inflate(R.layout.fragment5, container, false)
+        view.findViewById<Button>(R.id.first_button).setOnClickListener {
             findNavController().navigate(
-                R.id.action_secondFragment_to_firstFragment,
-                null,
-                navOptions {
-                    anim {
-                        enter = R.anim.fade_in
-                        exit = R.anim.slide_out
-                    }
-                }
-            )
-        }
-        view.findViewById<Button>(R.id.first_button2).setOnClickListener {
-            findNavController().navigate(
-                R.id.action_secondFragment_to_fragment4,
+                R.id.action_fragment5_to_fragment3,
                 null,
                 navOptions {
                     anim {
@@ -63,6 +49,19 @@ class SecondFragment : Fragment() {
                 }
             )
         }
+        view.findViewById<Button>(R.id.first_button2).setOnClickListener {
+            findNavController().navigate(
+                R.id.action_fragment5_to_fragment7,
+                null,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in
+                        exit = R.anim.fade_out
+                    }
+                }
+            )
+        }
+        // Inflate the layout for this fragment
         return view
     }
 
@@ -73,12 +72,12 @@ class SecondFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SecondFragment.
+         * @return A new instance of fragment Fragment5.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SecondFragment().apply {
+            Fragment5().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

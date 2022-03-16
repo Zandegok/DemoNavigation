@@ -34,7 +34,7 @@ class FirstFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_first, container, false)
@@ -42,6 +42,18 @@ class FirstFragment : Fragment() {
         button.setOnClickListener {
             findNavController().navigate(
                 R.id.action_firstFragment_to_secondFragment2,
+                null,
+                navOptions {
+                    anim {
+                        enter = R.anim.slide_in
+                        exit = R.anim.fade_out
+                    }
+                }
+            )
+        }
+        view.findViewById<Button>(R.id.first_button2).setOnClickListener {
+            findNavController().navigate(
+                R.id.action_firstFragment_to_fragment3,
                 null,
                 navOptions {
                     anim {
